@@ -1,6 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>Hello World</title>
+    <url>/2022/04/26/Hello%20World/</url>
+    <content><![CDATA[<center>第零篇 就从Hello World 开始吧</center>
+
+<ul>
+<li>记录生活 <a href="./tags/Life/">Life</a></li>
+<li>分享故事 <a href="./tags/Story/">Story</a></li>
+<li>编程学习 <a href="./../tags/Code/">Code</a></li>
+</ul>
+]]></content>
+      <tags>
+        <tag>Story</tag>
+        <tag>Life</tag>
+        <tag>Code</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Encounter</title>
     <url>/2022/04/26/Encounter/</url>
     <content><![CDATA[<center><h4>从一个突然的朋友圈开始 3/2</h4></center>
@@ -52,23 +69,6 @@
 ]]></content>
       <tags>
         <tag>Story</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Hello World</title>
-    <url>/2022/04/26/Hello%20World/</url>
-    <content><![CDATA[<center>第零篇 就从Hello World 开始吧</center>
-
-<ul>
-<li>记录生活 <a href="./tags/Life/">Life</a></li>
-<li>分享故事 <a href="./tags/Story/">Story</a></li>
-<li>编程学习 <a href="./../tags/Code/">Code</a></li>
-</ul>
-]]></content>
-      <tags>
-        <tag>Story</tag>
-        <tag>Life</tag>
-        <tag>Code</tag>
       </tags>
   </entry>
 </search>
