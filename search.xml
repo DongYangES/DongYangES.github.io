@@ -1,27 +1,74 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>Hello World</title>
-    <url>/2022/04/26/Hello-World-0/</url>
-    <content><![CDATA[<center>第一篇 就Hello World 开始吧</center>
+    <title>Encounter</title>
+    <url>/2022/04/26/Encounter/</url>
+    <content><![CDATA[<center><h4>从一个突然的朋友圈开始 3/2</h4></center>
+
+<img src="/2022/04/26/Encounter/image-20220426140325377.png" class="" title="image-20220426140325377">
+
+<ul>
+<li><p>快4个月没发朋友圈的<strong>羊</strong>突然不知道为什么转发了一条朋友圈，虽然最后这所谓的开学福利并没有什么用~</p>
+</li>
+<li><p>but，这可能是专属于<strong>羊</strong>的开学福利</p>
+<hr>
+</li>
+</ul>
+<img src="/2022/04/26/Encounter/image-20220426140707547.png" class="" title="image-20220426140707547">
+
+<ul>
+<li>从食堂开始打开话匣子</li>
+</ul>
+<img src="/2022/04/26/Encounter/image-20220426141023832.png" class="" title="image-20220426141023832">
+
+<ul>
+<li>图中可见，<strong>羊</strong>和<strong>汪汪队</strong>在加微信好友之后(2020年12月19日)还没说过一句话，一年快三个月之后，才开始一场关于学校食堂的交流</li>
+</ul>
+<hr>
+<ul>
+<li>第一张图片，是<strong>汪汪队</strong>在用电视学金融</li>
+</ul>
+<img src="/2022/04/26/Encounter/image-20220426141419637.png" class="" title="image-20220426141419637">
+
+<p><strong>汪汪队</strong>：<code>电视投屏偷学狗 举报了</code></p>
+<hr>
+<img src="/2022/04/26/Encounter/image-20220426141700180.png" class="" title="image-20220426141700180">
+
+<ul>
+<li><strong>羊</strong>的生日在<code>7月2日</code>，<strong>汪汪队</strong>的生日在<code>4月7日</code>，这样算来，明明相差</li>
+</ul>
+<p>$$<br>30-7+31+30+2&#x3D;86<br>$$</p>
+<p>天，不到三个月，看样是<strong>汪汪队</strong>算错了</p>
+<ul>
+<li>话说，4月7号这个生日是怎么get到的呢，都是<strong>汪汪队</strong>时不时在聊天中提到一个月后的4月7号是个<strong>重要的日子</strong></li>
+</ul>
+<img src="/2022/04/26/Encounter/image-20220426142339092.png" class="" title="image-20220426142339092">
+
+<hr>
+<ul>
+<li><h4 id="Dui-amp-Yang-met-on-March-2-magically-…"><a href="#Dui-amp-Yang-met-on-March-2-magically-…" class="headerlink" title="Dui &amp; Yang  met on March 2 magically …."></a>Dui &amp; Yang  met on March 2 magically ….</h4><hr>
+</li>
+</ul>
 ]]></content>
+      <tags>
+        <tag>Story</tag>
+      </tags>
   </entry>
   <entry>
     <title>Hello World</title>
-    <url>/2022/04/26/hello-world/</url>
-    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
+    <url>/2022/04/26/Hello%20World/</url>
+    <content><![CDATA[<center>第零篇 就从Hello World 开始吧</center>
 
-<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+<ul>
+<li>记录生活 <a href="./tags/Life/">Life</a></li>
+<li>分享故事 <a href="./tags/Story/">Story</a></li>
+<li>编程学习 <a href="./../tags/Code/">Code</a></li>
+</ul>
 ]]></content>
+      <tags>
+        <tag>Story</tag>
+        <tag>Life</tag>
+        <tag>Code</tag>
+      </tags>
   </entry>
 </search>
