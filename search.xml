@@ -3,7 +3,7 @@
   <entry>
     <title>Hello World</title>
     <url>/2022/04/26/Hello%20World/</url>
-    <content><![CDATA[<center>第零篇 就从Hello World 开始吧</center>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><center>第零篇 就从Hello World 开始吧</center>
 
 <ul>
 <li>记录生活 <a href="./tags/Life/">Life</a></li>
@@ -20,7 +20,7 @@
   <entry>
     <title>Encounter</title>
     <url>/2022/04/26/Encounter/</url>
-    <content><![CDATA[<center><h4>从一个突然的朋友圈开始 3/2</h4></center>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><center><h4>从一个突然的朋友圈开始 3/2</h4></center>
 
 <img src="/2022/04/26/Encounter/image-20220426140325377.png" class="" title="image-20220426140325377">
 
