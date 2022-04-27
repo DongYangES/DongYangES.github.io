@@ -1168,7 +1168,7 @@ pre .javascript .function {
 }
 .links-of-author a::before,
 .links-of-author span.exturl::before {
-  background: #fff;
+  background: #85ffac;
   border-radius: 50%;
   content: ' ';
   display: inline-block;
@@ -2151,9 +2151,6 @@ ul.breadcrumb li + li:last-child {
 .tag-cloud a:hover {
   color: var(--link-hover-color) !important;
 }
-.fancybox .image-caption {
-  display: none;
-}
 .search-pop-overlay {
   background: rgba(0,0,0,0);
   height: 100%;
@@ -2558,4 +2555,7 @@ mjx-container + br {
 }
 .links-of-blogroll-item {
   padding: 0;
+}
+.fancybox .image-caption {
+  display: none;
 }
