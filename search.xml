@@ -3,13 +3,13 @@
   <entry>
     <title>Hello World</title>
     <url>/2022/04/26/Hello%20World/</url>
-    <content><![CDATA[<center>第零篇 就从Hello World 开始吧</center>
+    <content><![CDATA[<html><head></head><body><center>第零篇 就从Hello World 开始吧</center>
 <ul>
 <li>记录生活 <a href="./tags/Life/">Life</a></li>
 <li>分享故事 <a href="./tags/Story/">Story</a></li>
 <li>编程学习 <a href="./../tags/Code/">Code</a></li>
 </ul>
-]]></content>
+</body></html>]]></content>
       <tags>
         <tag>Life</tag>
         <tag>Story</tag>
@@ -19,7 +19,7 @@
   <entry>
     <title>羊羊的属性</title>
     <url>/2022/04/27/%E7%BE%8A%E7%BE%8A%E7%9A%84%E5%B1%9E%E6%80%A7/</url>
-    <content><![CDATA[<center>From 汪汪队</center>
+    <content><![CDATA[<html><head></head><body><center>From 汪汪队</center>
 <p>羊羊的属性是：</p>
 <ul>
 <li>
@@ -33,7 +33,7 @@
 <p><img src="/2022/04/27/%E7%BE%8A%E7%BE%8A%E7%9A%84%E5%B1%9E%E6%80%A7/image-20220427150104260.png" alt="image-20220427150104260"></p>
 </li>
 </ul>
-]]></content>
+</body></html>]]></content>
       <tags>
         <tag>Story</tag>
       </tags>
@@ -41,7 +41,7 @@
   <entry>
     <title>Cloud in BeiJing</title>
     <url>/2022/04/27/Cloud-in-BeiJing/</url>
-    <content><![CDATA[<center><h3>
+    <content><![CDATA[<html><head></head><body><center><h3>
     那些在北京拍摄的云☁
     </h3></center>
 <img src="/2022/04/27/Cloud-in-BeiJing/image-20220427000442571.png" style="zoom:25%;">
@@ -59,7 +59,7 @@
 <img src="/2022/04/27/Cloud-in-BeiJing/C36926923CFA9CC1C2C6A34982089789.jpg" alt="img" style="zoom:25%;">
 <center>2020/08/31摄于紫荆公寓</center>
 <center><b>To be continued</b></center>
-]]></content>
+</body></html>]]></content>
       <tags>
         <tag>Life</tag>
       </tags>
@@ -67,7 +67,7 @@
   <entry>
     <title>Encounter</title>
     <url>/2022/04/26/Encounter/</url>
-    <content><![CDATA[<center><h4>从一个突然的朋友圈开始 3/2</h4></center>
+    <content><![CDATA[<html><head></head><body><center><h4>从一个突然的朋友圈开始 3/2</h4></center>
 <p><img src="/2022/04/26/Encounter/image-20220426140325377.png" alt="image-20220426140325377"></p>
 <ul>
 <li>
@@ -112,7 +112,7 @@ $$</p>
 <hr>
 </li>
 </ul>
-]]></content>
+</body></html>]]></content>
       <tags>
         <tag>Story</tag>
       </tags>
