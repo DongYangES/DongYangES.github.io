@@ -666,8 +666,12 @@ window.addEventListener('pjax:success', () => {
 NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
   NexT.utils.getScript('//unpkg.com/valine/dist/Valine.min.js', () => {
     var GUEST = ['nick', 'mail', 'link'];
-    var guest = 'nick,mail,link';
+    var guest = 'nick,mail';
     guest = guest.split(',').filter(item => {
+      return GUEST.includes(item);
+    });
+    var required_fields='nick,mail';
+    required_fields = required_fields.split(',').filter(item => {
       return GUEST.includes(item);
     });
     new Valine({
@@ -684,7 +688,8 @@ NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
       lang       : 'zh-cn' || 'zh-cn',
       path       : location.pathname,
       recordIP   : false,
-      serverURLs : ''
+      serverURLs : '',
+      requiredFields: required_fields
     });
   }, window.Valine);
 });
