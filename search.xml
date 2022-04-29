@@ -12,18 +12,28 @@
 </ul>
 </body></html>]]></content>
       <tags>
-        <tag>Story</tag>
         <tag>Life</tag>
+        <tag>Story</tag>
         <tag>Code</tag>
         <tag>Video</tag>
       </tags>
   </entry>
   <entry>
+    <title>Day</title>
+    <url>/2022/04/29/Day/</url>
+    <content><![CDATA[<html><head></head><body><p>                        ❤️❤️❤️<strong>4.29</strong> ❤️❤️❤️</p>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1/dist/APlayer.min.css"><script src="https://cdn.jsdelivr.net/npm/aplayer@1/dist/APlayer.min.js"></script><script src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js"></script><meting-js metin="meting" server="netease" type="song" id="557584888"></meting-js>
+</body></html>]]></content>
+      <tags>
+        <tag>Story</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>我想《晴天》里刮的应该是《龙卷风》</title>
     <url>/2022/04/28/%E6%88%91%E6%83%B3%E3%80%8A%E6%99%B4%E5%A4%A9%E3%80%8B%E9%87%8C%E5%88%AE%E7%9A%84%E5%BA%94%E8%AF%A5%E6%98%AF%E3%80%8A%E9%BE%99%E5%8D%B7%E9%A3%8E%E3%80%8B/</url>
-    <content><![CDATA[<html><head><style>.bbplayer{width: 100%; max-width: 1000px; margin: auto}</style></head><body><div class="bbplayer"><iframe class="bbplayer" id="mmedia-gauExisoPJfWaRHB" src="https://player.bilibili.com/player.html?bvid=BV1bM4y1c7G2&amp;page=1&amp;high_quality=1&amp;danmaku=true" allowfullscreen="allowfullscreen" scrolling="no" border="0" frameborder="0" framespacing="0" sandbox="allow-top-navigation allow-same-origin allow-forms allow-scripts allow-popups"></iframe></div><script> document.getElementById("mmedia-gauExisoPJfWaRHB").style.height=document.getElementById("mmedia-gauExisoPJfWaRHB").scrollWidth*0.76+"px";
+    <content><![CDATA[<html><head><style>.bbplayer{width: 100%; max-width: 1000px; margin: auto}</style></head><body><div class="bbplayer"><iframe class="bbplayer" id="mmedia-EoLHZhZSXUNecvxE" src="https://player.bilibili.com/player.html?bvid=BV1bM4y1c7G2&amp;page=1&amp;high_quality=1&amp;danmaku=true" allowfullscreen="allowfullscreen" scrolling="no" border="0" frameborder="0" framespacing="0" sandbox="allow-top-navigation allow-same-origin allow-forms allow-scripts allow-popups"></iframe></div><script> document.getElementById("mmedia-EoLHZhZSXUNecvxE").style.height=document.getElementById("mmedia-EoLHZhZSXUNecvxE").scrollWidth*0.76+"px";
     window.onresize = function(){
-      document.getElementById("mmedia-gauExisoPJfWaRHB").style.height=document.getElementById("mmedia-gauExisoPJfWaRHB").scrollWidth*0.76+"px";
+      document.getElementById("mmedia-EoLHZhZSXUNecvxE").style.height=document.getElementById("mmedia-EoLHZhZSXUNecvxE").scrollWidth*0.76+"px";
     }; </script></body></html>]]></content>
       <tags>
         <tag>Video</tag>
