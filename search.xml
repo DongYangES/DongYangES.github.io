@@ -1,6 +1,124 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>Hello World</title>
+    <url>/2022/04/26/Hello%20World/</url>
+    <content><![CDATA[<html><head></head><body><center>第零篇 就从Hello World 开始吧</center>
+<ul>
+<li>记录生活 <a href="./tags/Life/">Life</a></li>
+<li>分享故事 <a href="./tags/Story/">Story</a></li>
+<li>编程学习 <a href="./tags/Code/">Code</a></li>
+<li>视频转发 <a href="./tags/Video/">Video</a></li>
+</ul>
+</body></html>]]></content>
+      <tags>
+        <tag>Life</tag>
+        <tag>Story</tag>
+        <tag>Code</tag>
+        <tag>Video</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>北京路线</title>
+    <url>/2022/05/03/%E5%8C%97%E4%BA%AC%E8%B7%AF%E7%BA%BF/</url>
+    <content><![CDATA[<html><head></head><body><h2 id="TODO"><a class="header-anchor" href="#TODO">¶</a>TODO:</h2>
+<h5 id="北京小众骑行路线①-·-春天骑车去-北京LOOK"><a class="header-anchor" href="#北京小众骑行路线①-·-春天骑车去-北京LOOK">¶</a>北京小众骑行路线① · 春天骑车去 | 北京LOOK</h5>
+<p><a href="https://mp.weixin.qq.com/s/bQeaRDfdh8xSf4i0MO_0lA">北京小众骑行路线① · 春天骑车去</a></p>
+<h5 id="青年路-·-北京最宝藏的一条街-北京LOOK"><a class="header-anchor" href="#青年路-·-北京最宝藏的一条街-北京LOOK">¶</a>青年路 · 北京最宝藏的一条街 | 北京LOOK</h5>
+<p><a href="https://mp.weixin.qq.com/s/e-6ceDEmbjXOL6m6BnST0A">青年路 · 北京最宝藏的一条街 | 北京LOOK</a></p>
+<h5 id="北京蓝港码头"><a class="header-anchor" href="#北京蓝港码头">¶</a>北京蓝港码头</h5>
+<style>.bbplayer{width: 100%; max-width: 1000px; margin: auto}</style><div class="bbplayer"><iframe class="bbplayer" id="mmedia-qkZfkBVZCoYkcjsk" src="https://player.bilibili.com/player.html?bvid=BV1pZ4y1o7xr&amp;page=1&amp;high_quality=1&amp;danmaku=true" allowfullscreen="allowfullscreen" scrolling="no" border="0" frameborder="0" framespacing="0" sandbox="allow-top-navigation allow-same-origin allow-forms allow-scripts allow-popups"></iframe></div><script> document.getElementById("mmedia-qkZfkBVZCoYkcjsk").style.height=document.getElementById("mmedia-qkZfkBVZCoYkcjsk").scrollWidth*0.76+"px";
+    window.onresize = function(){
+      document.getElementById("mmedia-qkZfkBVZCoYkcjsk").style.height=document.getElementById("mmedia-qkZfkBVZCoYkcjsk").scrollWidth*0.76+"px";
+    }; </script>
+<h5 id="其他"><a class="header-anchor" href="#其他">¶</a>其他</h5>
+<video id="mmedia-WIKXhqDiQEgBbYfM" vide="video" src="/2022/05/03/北京路线/douyin1.mp4" width="30%"></video>
+</body></html>]]></content>
+      <tags>
+        <tag>Life</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>有人说，好像听到了顾淼在唱《撒野》，撕心裂肺</title>
+    <url>/2022/04/30/%E6%9C%89%E4%BA%BA%E8%AF%B4%EF%BC%8C%E5%A5%BD%E5%83%8F%E5%90%AC%E5%88%B0%E4%BA%86%E9%A1%BE%E6%B7%BC%E5%9C%A8%E5%94%B1%E3%80%8A%E6%92%92%E9%87%8E%E3%80%8B%EF%BC%8C%E6%92%95%E5%BF%83%E8%A3%82%E8%82%BA/</url>
+    <content><![CDATA[<html><head><style>.bbplayer{width: 100%; max-width: 1000px; margin: auto}</style></head><body><div class="bbplayer"><iframe class="bbplayer" id="mmedia-fUsqKKWxjdsfEVSq" src="https://player.bilibili.com/player.html?bvid=BV11J411k7Jv&amp;page=1&amp;high_quality=1&amp;danmaku=true" allowfullscreen="allowfullscreen" scrolling="no" border="0" frameborder="0" framespacing="0" sandbox="allow-top-navigation allow-same-origin allow-forms allow-scripts allow-popups"></iframe></div><script> document.getElementById("mmedia-fUsqKKWxjdsfEVSq").style.height=document.getElementById("mmedia-fUsqKKWxjdsfEVSq").scrollWidth*0.76+"px";
+    window.onresize = function(){
+      document.getElementById("mmedia-fUsqKKWxjdsfEVSq").style.height=document.getElementById("mmedia-fUsqKKWxjdsfEVSq").scrollWidth*0.76+"px";
+    }; </script></body></html>]]></content>
+      <tags>
+        <tag>Video</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Day</title>
+    <url>/2022/04/29/Day/</url>
+    <content><![CDATA[<html><head></head><body><p>                        ❤️❤️❤️<strong>4.29</strong> ❤️❤️❤️</p>
+<!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1/dist/APlayer.min.css"><script src="https://cdn.jsdelivr.net/npm/aplayer@1/dist/APlayer.min.js"></script><script src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js"></script><meting-js metin="meting" server="netease" type="song" id=557584888 ></meting-js> -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1/dist/APlayer.min.css"><script src="https://cdn.jsdelivr.net/npm/aplayer@1/dist/APlayer.min.js"></script><div id="mmedia-ZIQoWtYLDYVLfOpa"></div><script> var ZIQoWtYLDYVLfOpa_options = JSON.parse('{\"audio\":[{\"name\":\"demo\",\"artist\":\"demo\",\"url\":\"当你老了demo.mp3\"}]}'); ZIQoWtYLDYVLfOpa_options.container = document.getElementById("mmedia-ZIQoWtYLDYVLfOpa"); const ap_ZIQoWtYLDYVLfOpa = new APlayer(ZIQoWtYLDYVLfOpa_options); </script>
+</body></html>]]></content>
+      <tags>
+        <tag>Story</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>我想《晴天》里刮的应该是《龙卷风》</title>
+    <url>/2022/04/28/%E6%88%91%E6%83%B3%E3%80%8A%E6%99%B4%E5%A4%A9%E3%80%8B%E9%87%8C%E5%88%AE%E7%9A%84%E5%BA%94%E8%AF%A5%E6%98%AF%E3%80%8A%E9%BE%99%E5%8D%B7%E9%A3%8E%E3%80%8B/</url>
+    <content><![CDATA[<html><head><style>.bbplayer{width: 100%; max-width: 1000px; margin: auto}</style></head><body><div class="bbplayer"><iframe class="bbplayer" id="mmedia-BfmHAIEyyHdjMTCT" src="https://player.bilibili.com/player.html?bvid=BV1bM4y1c7G2&amp;page=1&amp;high_quality=1&amp;danmaku=true" allowfullscreen="allowfullscreen" scrolling="no" border="0" frameborder="0" framespacing="0" sandbox="allow-top-navigation allow-same-origin allow-forms allow-scripts allow-popups"></iframe></div><script> document.getElementById("mmedia-BfmHAIEyyHdjMTCT").style.height=document.getElementById("mmedia-BfmHAIEyyHdjMTCT").scrollWidth*0.76+"px";
+    window.onresize = function(){
+      document.getElementById("mmedia-BfmHAIEyyHdjMTCT").style.height=document.getElementById("mmedia-BfmHAIEyyHdjMTCT").scrollWidth*0.76+"px";
+    }; </script></body></html>]]></content>
+      <tags>
+        <tag>Video</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>故事的开始是春夏</title>
+    <url>/2022/04/27/%E6%95%85%E4%BA%8B%E7%9A%84%E5%BC%80%E5%A7%8B%E6%98%AF%E6%98%A5%E5%A4%8F/</url>
+    <content><![CDATA[<html><head></head><body><center>From 汪汪队</center>
+<center><h4>妈妈说 我们相遇在最美的月份</h4></center>
+<p>为了教育我好好念书，爸爸总说“你见过清华凌晨两点的图书馆吗？“</p>
+<p><s>哼我承认我没见过！！那是因为我的男孩他不爱去图书馆</s> <s>他如果爱去我也能天天看</s></p>
+<p>但我见过清华下午两点的春天。除了下午，我还见过清华的清晨与傍晚，阴天和晴天。</p>
+<p>我喜欢的季节是四月。四月有穿淡粉色裙子的双马尾小女孩和满天飞舞的肥皂泡泡 有八点钟教室准时传出来的朗朗读书声 有氤氲在空气中不会散去的雨  有很绿很绿的叶子  很新很新的草和花  有17岁的女孩在谈恋爱 也有拄拐杖的老人拿手机小心翼翼的拍下花骨朵 我最喜欢四月。</p>
+<p>于是想跟你分享，我们的Vx相册里也充满了春天的气息</p>
+<p><img src="/2022/04/27/%E6%95%85%E4%BA%8B%E7%9A%84%E5%BC%80%E5%A7%8B%E6%98%AF%E6%98%A5%E5%A4%8F/image-20220427215305538.png" alt="image-20220427215305538"></p>
+<center>03/12 玉兰花开时 邂逅的最佳时间</center>
+<p><img src="/2022/04/27/%E6%95%85%E4%BA%8B%E7%9A%84%E5%BC%80%E5%A7%8B%E6%98%AF%E6%98%A5%E5%A4%8F/image-20220427215506410.png" alt="image-20220427215506410"></p>
+<center>03/29 核酸日 和春天撞个满怀</center>
+<p><img src="/2022/04/27/%E6%95%85%E4%BA%8B%E7%9A%84%E5%BC%80%E5%A7%8B%E6%98%AF%E6%98%A5%E5%A4%8F/image-20220427215714744.png" alt="image-20220427215714744"></p>
+<center>03/29 路灯下有一株花开的很好看</center>
+<p><img src="/2022/04/27/%E6%95%85%E4%BA%8B%E7%9A%84%E5%BC%80%E5%A7%8B%E6%98%AF%E6%98%A5%E5%A4%8F/image-20220427215957158.png" alt="image-20220427215957158"></p>
+<center>04/27 邻居家的院子里</center>
+<p>反正反正 在好看的季节两个好看的人重逢了</p>
+<p>嘿嘿 我好像遇见了我的夏天</p>
+</body></html>]]></content>
+      <tags>
+        <tag>Story</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>羊羊的属性</title>
+    <url>/2022/04/27/%E7%BE%8A%E7%BE%8A%E7%9A%84%E5%B1%9E%E6%80%A7/</url>
+    <content><![CDATA[<html><head></head><body><center>From 汪汪队</center>
+<p>羊羊的属性是：</p>
+<ul>
+<li>
+<p><code>80%</code>的快乐卷毛小狗！！！🐶</p>
+</li>
+<li>
+<p><code>5%</code>的PIG！！🐷</p>
+</li>
+<li>
+<p><code>15%</code>的未知属性！!</p>
+<p><img src="/2022/04/27/%E7%BE%8A%E7%BE%8A%E7%9A%84%E5%B1%9E%E6%80%A7/image-20220427150104260.png" alt="image-20220427150104260"></p>
+</li>
+</ul>
+</body></html>]]></content>
+      <tags>
+        <tag>Story</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Cloud in BeiJing</title>
     <url>/2022/04/27/Cloud-in-BeiJing/</url>
     <content><![CDATA[<html><head></head><body><center><h3>
@@ -24,17 +142,6 @@
 </body></html>]]></content>
       <tags>
         <tag>Life</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Day</title>
-    <url>/2022/04/29/Day/</url>
-    <content><![CDATA[<html><head></head><body><p>                        ❤️❤️❤️<strong>4.29</strong> ❤️❤️❤️</p>
-<!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1/dist/APlayer.min.css"><script src="https://cdn.jsdelivr.net/npm/aplayer@1/dist/APlayer.min.js"></script><script src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js"></script><meting-js metin="meting" server="netease" type="song" id=557584888 ></meting-js> -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1/dist/APlayer.min.css"><script src="https://cdn.jsdelivr.net/npm/aplayer@1/dist/APlayer.min.js"></script><div id="mmedia-CPGYratetfPmToCL"></div><script> var CPGYratetfPmToCL_options = JSON.parse('{\"audio\":[{\"name\":\"demo\",\"artist\":\"demo\",\"url\":\"当你老了demo.mp3\"}]}'); CPGYratetfPmToCL_options.container = document.getElementById("mmedia-CPGYratetfPmToCL"); const ap_CPGYratetfPmToCL = new APlayer(CPGYratetfPmToCL_options); </script>
-</body></html>]]></content>
-      <tags>
-        <tag>Story</tag>
       </tags>
   </entry>
   <entry>
@@ -83,93 +190,6 @@ $$</p>
 <li>
 <h4 id="Dui-Yang-met-on-March-2-magically-…"><a class="header-anchor" href="#Dui-Yang-met-on-March-2-magically-…">¶</a>Dui &amp; Yang  met on March 2 magically …</h4>
 <hr>
-</li>
-</ul>
-</body></html>]]></content>
-      <tags>
-        <tag>Story</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Hello World</title>
-    <url>/2022/04/26/Hello%20World/</url>
-    <content><![CDATA[<html><head></head><body><center>第零篇 就从Hello World 开始吧</center>
-<ul>
-<li>记录生活 <a href="./tags/Life/">Life</a></li>
-<li>分享故事 <a href="./tags/Story/">Story</a></li>
-<li>编程学习 <a href="./tags/Code/">Code</a></li>
-<li>视频转发 <a href="./tags/Video/">Video</a></li>
-</ul>
-</body></html>]]></content>
-      <tags>
-        <tag>Life</tag>
-        <tag>Story</tag>
-        <tag>Code</tag>
-        <tag>Video</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>我想《晴天》里刮的应该是《龙卷风》</title>
-    <url>/2022/04/28/%E6%88%91%E6%83%B3%E3%80%8A%E6%99%B4%E5%A4%A9%E3%80%8B%E9%87%8C%E5%88%AE%E7%9A%84%E5%BA%94%E8%AF%A5%E6%98%AF%E3%80%8A%E9%BE%99%E5%8D%B7%E9%A3%8E%E3%80%8B/</url>
-    <content><![CDATA[<html><head><style>.bbplayer{width: 100%; max-width: 1000px; margin: auto}</style></head><body><div class="bbplayer"><iframe class="bbplayer" id="mmedia-WVSnyAoKLVWakEAh" src="https://player.bilibili.com/player.html?bvid=BV1bM4y1c7G2&amp;page=1&amp;high_quality=1&amp;danmaku=true" allowfullscreen="allowfullscreen" scrolling="no" border="0" frameborder="0" framespacing="0" sandbox="allow-top-navigation allow-same-origin allow-forms allow-scripts allow-popups"></iframe></div><script> document.getElementById("mmedia-WVSnyAoKLVWakEAh").style.height=document.getElementById("mmedia-WVSnyAoKLVWakEAh").scrollWidth*0.76+"px";
-    window.onresize = function(){
-      document.getElementById("mmedia-WVSnyAoKLVWakEAh").style.height=document.getElementById("mmedia-WVSnyAoKLVWakEAh").scrollWidth*0.76+"px";
-    }; </script></body></html>]]></content>
-      <tags>
-        <tag>Video</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>故事的开始是春夏</title>
-    <url>/2022/04/27/%E6%95%85%E4%BA%8B%E7%9A%84%E5%BC%80%E5%A7%8B%E6%98%AF%E6%98%A5%E5%A4%8F/</url>
-    <content><![CDATA[<html><head></head><body><center>From 汪汪队</center>
-<center><h4>妈妈说 我们相遇在最美的月份</h4></center>
-<p>为了教育我好好念书，爸爸总说“你见过清华凌晨两点的图书馆吗？“</p>
-<p><s>哼我承认我没见过！！那是因为我的男孩他不爱去图书馆</s> <s>他如果爱去我也能天天看</s></p>
-<p>但我见过清华下午两点的春天。除了下午，我还见过清华的清晨与傍晚，阴天和晴天。</p>
-<p>我喜欢的季节是四月。四月有穿淡粉色裙子的双马尾小女孩和满天飞舞的肥皂泡泡 有八点钟教室准时传出来的朗朗读书声 有氤氲在空气中不会散去的雨  有很绿很绿的叶子  很新很新的草和花  有17岁的女孩在谈恋爱 也有拄拐杖的老人拿手机小心翼翼的拍下花骨朵 我最喜欢四月。</p>
-<p>于是想跟你分享，我们的Vx相册里也充满了春天的气息</p>
-<p><img src="/2022/04/27/%E6%95%85%E4%BA%8B%E7%9A%84%E5%BC%80%E5%A7%8B%E6%98%AF%E6%98%A5%E5%A4%8F/image-20220427215305538.png" alt="image-20220427215305538"></p>
-<center>03/12 玉兰花开时 邂逅的最佳时间</center>
-<p><img src="/2022/04/27/%E6%95%85%E4%BA%8B%E7%9A%84%E5%BC%80%E5%A7%8B%E6%98%AF%E6%98%A5%E5%A4%8F/image-20220427215506410.png" alt="image-20220427215506410"></p>
-<center>03/29 核酸日 和春天撞个满怀</center>
-<p><img src="/2022/04/27/%E6%95%85%E4%BA%8B%E7%9A%84%E5%BC%80%E5%A7%8B%E6%98%AF%E6%98%A5%E5%A4%8F/image-20220427215714744.png" alt="image-20220427215714744"></p>
-<center>03/29 路灯下有一株花开的很好看</center>
-<p><img src="/2022/04/27/%E6%95%85%E4%BA%8B%E7%9A%84%E5%BC%80%E5%A7%8B%E6%98%AF%E6%98%A5%E5%A4%8F/image-20220427215957158.png" alt="image-20220427215957158"></p>
-<center>04/27 邻居家的院子里</center>
-<p>反正反正 在好看的季节两个好看的人重逢了</p>
-<p>嘿嘿 我好像遇见了我的夏天</p>
-</body></html>]]></content>
-      <tags>
-        <tag>Story</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>有人说，好像听到了顾淼在唱《撒野》，撕心裂肺</title>
-    <url>/2022/04/30/%E6%9C%89%E4%BA%BA%E8%AF%B4%EF%BC%8C%E5%A5%BD%E5%83%8F%E5%90%AC%E5%88%B0%E4%BA%86%E9%A1%BE%E6%B7%BC%E5%9C%A8%E5%94%B1%E3%80%8A%E6%92%92%E9%87%8E%E3%80%8B%EF%BC%8C%E6%92%95%E5%BF%83%E8%A3%82%E8%82%BA/</url>
-    <content><![CDATA[<html><head><style>.bbplayer{width: 100%; max-width: 1000px; margin: auto}</style></head><body><div class="bbplayer"><iframe class="bbplayer" id="mmedia-BreyCVXRnabInjwJ" src="https://player.bilibili.com/player.html?bvid=BV11J411k7Jv&amp;page=1&amp;high_quality=1&amp;danmaku=true" allowfullscreen="allowfullscreen" scrolling="no" border="0" frameborder="0" framespacing="0" sandbox="allow-top-navigation allow-same-origin allow-forms allow-scripts allow-popups"></iframe></div><script> document.getElementById("mmedia-BreyCVXRnabInjwJ").style.height=document.getElementById("mmedia-BreyCVXRnabInjwJ").scrollWidth*0.76+"px";
-    window.onresize = function(){
-      document.getElementById("mmedia-BreyCVXRnabInjwJ").style.height=document.getElementById("mmedia-BreyCVXRnabInjwJ").scrollWidth*0.76+"px";
-    }; </script></body></html>]]></content>
-      <tags>
-        <tag>Video</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>羊羊的属性</title>
-    <url>/2022/04/27/%E7%BE%8A%E7%BE%8A%E7%9A%84%E5%B1%9E%E6%80%A7/</url>
-    <content><![CDATA[<html><head></head><body><center>From 汪汪队</center>
-<p>羊羊的属性是：</p>
-<ul>
-<li>
-<p><code>80%</code>的快乐卷毛小狗！！！🐶</p>
-</li>
-<li>
-<p><code>5%</code>的PIG！！🐷</p>
-</li>
-<li>
-<p><code>15%</code>的未知属性！!</p>
-<p><img src="/2022/04/27/%E7%BE%8A%E7%BE%8A%E7%9A%84%E5%B1%9E%E6%80%A7/image-20220427150104260.png" alt="image-20220427150104260"></p>
 </li>
 </ul>
 </body></html>]]></content>
