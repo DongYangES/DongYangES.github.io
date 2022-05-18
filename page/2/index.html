@@ -201,8 +201,356 @@
         document.getElementById("timesHeader").innerHTML ="<b>"+ hnum + "</b> 小时 <b>" + mnum + "</b> 分 <b>" + snum + "</b> 秒";
     }
 setInterval("createtimeHeader()",250);
-</script>
+</script>      
+            
+  
+  
+  <article itemscope="" itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://dongyanges.github.io/2022/05/15/%E5%8D%A1%E9%80%9A%E5%9B%BE%E5%83%8F%E7%94%9F%E6%88%90/">
+
+    <span hidden="" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="DongYang">
+      <meta itemprop="description" content="share something in life">
+    </span>
+
+    <span hidden="" itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="DongYang's Blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
           
+            <a href="/2022/05/15/%E5%8D%A1%E9%80%9A%E5%9B%BE%E5%83%8F%E7%94%9F%E6%88%90/" class="post-title-link" itemprop="url">卡通图像生成</a>
+        </h2>
+
+        <div class="post-meta">
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2022-05-15 00:57:10 / 修改时间：01:53:15" itemprop="dateCreated datePublished" datetime="2022-05-15T00:57:10+08:00">2022-05-15</time>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/2022/05/15/%E5%8D%A1%E9%80%9A%E5%9B%BE%E5%83%8F%E7%94%9F%E6%88%90/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2022/05/15/%E5%8D%A1%E9%80%9A%E5%9B%BE%E5%83%8F%E7%94%9F%E6%88%90/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>Blog开通以来的第一个Code教程💦</p>
+<p>记录一下由图片转卡通图片生成的全过程(基于Pytorch)</p>
+<h3 id="项目PyTorch-Implementation-of-AnimeGANv2"><a class="header-anchor" href="#项目PyTorch-Implementation-of-AnimeGANv2">¶</a>项目<a target="_blank" rel="noopener" href="https://github.com/bryandlee/animegan2-pytorch">PyTorch Implementation of AnimeGANv2 </a></h3>
+<h4 id="1-项目环境要求"><a class="header-anchor" href="#1-项目环境要求">¶</a>1.项目环境要求</h4>
+<figure class="highlight txt"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">torch</span><br><span class="line">pillow</span><br></pre></td></tr></tbody></table></figure>
+<h5 id=""><a class="header-anchor" href="#">¶</a></h5>
+<h4 id="2-原项目效果"><a class="header-anchor" href="#2-原项目效果">¶</a>2.原项目效果</h4>
+<p><img src="https://user-images.githubusercontent.com/26464535/142294796-54394a4a-a566-47a1-b9ab-4e715b901442.gif" alt=""></p>
+<h4 id="3-使用效果"><a class="header-anchor" href="#3-使用效果">¶</a>3.使用效果</h4>
+<h5 id="源图片"><a class="header-anchor" href="#源图片">¶</a>源图片</h5>
+<img src="/2022/05/15/%E5%8D%A1%E9%80%9A%E5%9B%BE%E5%83%8F%E7%94%9F%E6%88%90/ba4a91dfba4a5f4cd2cf540c1ed12342.jpg" alt="ba4a91dfba4a5f4cd2cf540c1ed12342" style="zoom:25%;">
+<h5 id="四种结果"><a class="header-anchor" href="#四种结果">¶</a>四种结果</h5>
+<table align="center">
+	<tbody><tr>
+		<td>
+			<center>
+				<img src="/2022/05/15/%E5%8D%A1%E9%80%9A%E5%9B%BE%E5%83%8F%E7%94%9F%E6%88%90/celeba_distill.jpg" width="80%">
+				<br>
+				<font color="AAAAAA">celeba_distill.jpg</font>
+			</center>
+		</td>
+		<td>
+			<center>
+				<img src="/2022/05/15/%E5%8D%A1%E9%80%9A%E5%9B%BE%E5%83%8F%E7%94%9F%E6%88%90/face_paint_512_v1.jpg" width="80%">
+				<br>
+				<font color="AAAAAA">face_paint_512_v1.jpg</font>
+			</center>
+		</td>
+        <td>
+			<center>
+				<img src="/2022/05/15/%E5%8D%A1%E9%80%9A%E5%9B%BE%E5%83%8F%E7%94%9F%E6%88%90/face_paint_512_v2.jpg" width="80%">
+				<br>
+				<font color="AAAAAA">face_paint_512_v2.jpg</font>
+			</center>
+		</td>
+        <td>
+			<center>
+				<img src="/2022/05/15/%E5%8D%A1%E9%80%9A%E5%9B%BE%E5%83%8F%E7%94%9F%E6%88%90/paprika.jpg" width="80%">
+				<br>
+				<font color="AAAAAA">paprika.jpg</font>
+			</center>
+		</td>
+	</tr>
+</tbody></table>
+<h4 id="4-使用方法"><a class="header-anchor" href="#4-使用方法">¶</a>4.使用方法</h4>
+<h5 id="方法1（推荐）"><a class="header-anchor" href="#方法1（推荐）">¶</a>方法1（推荐）</h5>
+<h5 id="源码下载"><a class="header-anchor" href="#源码下载">¶</a>源码下载</h5>
+<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">clone</span> git@github.com:bryandlee/animegan2-pytorch.git</span><br><span class="line"><span class="built_in">cd</span> animegan2-pytorch</span><br></pre></td></tr></tbody></table></figure>
+<p><strong>Inference</strong></p>
+<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">python test.py --input_dir [image_folder_path] --device [cpu/cuda] --checkpoint .\weights\[style].pt --output_dir [output_dir]</span><br></pre></td></tr></tbody></table></figure>
+<p>其中<code>image_folder_path</code>为源图片文件夹地址</p>
+<p><code>[cpu/cuda]</code>对应<code>torch</code>版本为<code>cpu/gpu</code>，如果使用cuda报错，则使用cpu</p>
+<p><code>[style]</code>为不同风格的pretraind model 参考上文 可以全部尝试</p>
+<p><code>[output_dir]</code>为输出文件夹，默认为<code>./samples/results</code></p>
+<h5 id="方法2"><a class="header-anchor" href="#方法2">¶</a>方法2</h5>
+<p>无需下载源码使用<code>torch.hub</code></p>
+<figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> torch</span><br><span class="line">model = torch.hub.load(<span class="string">"bryandlee/animegan2-pytorch"</span>, <span class="string">"generator"</span>).<span class="built_in">eval</span>()</span><br><span class="line">out = model(img_tensor)  <span class="comment"># BCHW tensor</span></span><br></pre></td></tr></tbody></table></figure>
+<p>其他模型的选择，同方法1的模型</p>
+<figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">model = torch.hub.load(<span class="string">"bryandlee/animegan2-pytorch:main"</span>, <span class="string">"generator"</span>, pretrained=<span class="string">"celeba_distill"</span>)</span><br><span class="line">model = torch.hub.load(<span class="string">"bryandlee/animegan2-pytorch:main"</span>, <span class="string">"generator"</span>, pretrained=<span class="string">"face_paint_512_v1"</span>)</span><br><span class="line">model = torch.hub.load(<span class="string">"bryandlee/animegan2-pytorch:main"</span>, <span class="string">"generator"</span>, pretrained=<span class="string">"face_paint_512_v2"</span>)</span><br><span class="line">model = torch.hub.load(<span class="string">"bryandlee/animegan2-pytorch:main"</span>, <span class="string">"generator"</span>, pretrained=<span class="string">"paprika"</span>)</span><br></pre></td></tr></tbody></table></figure>
+<p>使用方法</p>
+<figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> PIL <span class="keyword">import</span> Image</span><br><span class="line"></span><br><span class="line">face2paint = torch.hub.load(<span class="string">"bryandlee/animegan2-pytorch:main"</span>, <span class="string">"face2paint"</span>, size=<span class="number">512</span>)</span><br><span class="line"></span><br><span class="line">img = Image.<span class="built_in">open</span>(<span class="string">"img.png"</span>).convert(<span class="string">"RGB"</span>)</span><br><span class="line">out = face2paint(model, img)</span><br></pre></td></tr></tbody></table></figure>
+<p>将上述<code>img.png</code>更换成你自己的图片路径，效果同上</p>
+<p>完整代码示例</p>
+<figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> PIL <span class="keyword">import</span> Image</span><br><span class="line"><span class="keyword">import</span> torch</span><br><span class="line">model = torch.hub.load(<span class="string">"bryandlee/animegan2-pytorch:main"</span>, <span class="string">"generator"</span>, pretrained=<span class="string">"face_paint_512_v1"</span>)</span><br><span class="line">face2paint = torch.hub.load(<span class="string">"bryandlee/animegan2-pytorch:main"</span>, <span class="string">"face2paint"</span>, size=<span class="number">512</span>)</span><br><span class="line">img = Image.<span class="built_in">open</span>(<span class="string">"img.png"</span>).convert(<span class="string">"RGB"</span>)</span><br><span class="line">out = face2paint(model, img)</span><br><span class="line">out.save(<span class="string">"result.jpg"</span>)</span><br></pre></td></tr></tbody></table></figure>
+<p>注意:方法2可能导致图片size发生变化</p>
+<hr>
+<center><b>END</b></center>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+      
+            
+  
+  
+  <article itemscope="" itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://dongyanges.github.io/2022/04/27/Cloud-in-BeiJing/">
+
+    <span hidden="" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="DongYang">
+      <meta itemprop="description" content="share something in life">
+    </span>
+
+    <span hidden="" itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="DongYang's Blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2022/04/27/Cloud-in-BeiJing/" class="post-title-link" itemprop="url">Cloud in BeiJing</a>
+        </h2>
+
+        <div class="post-meta">
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2022-04-27 00:01:25" itemprop="dateCreated datePublished" datetime="2022-04-27T00:01:25+08:00">2022-04-27</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2022-05-14 23:25:31" itemprop="dateModified" datetime="2022-05-14T23:25:31+08:00">2022-05-14</time>
+              </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/2022/04/27/Cloud-in-BeiJing/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2022/04/27/Cloud-in-BeiJing/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <center><h3>
+    那些在北京拍摄的云☁
+    </h3></center>
+<img src="/2022/04/27/Cloud-in-BeiJing/202205140.jpg" style="zoom:25%;">
+<center>2022/05/14摄于紫荆公寓</center>
+<img src="/2022/04/27/Cloud-in-BeiJing/202205141.jpg" style="zoom:25%;">
+<center>2022/05/14摄于紫荆公寓</center>
+<img src="/2022/04/27/Cloud-in-BeiJing/202205142.jpg" style="zoom:25%;">
+<center>2022/05/14摄于紫荆公寓</center>
+<img src="/2022/04/27/Cloud-in-BeiJing/image-20220427000442571.png" style="zoom:25%;">
+<center>2021/04/30摄于故宫角楼</center>
+<img src="/2022/04/27/Cloud-in-BeiJing/AC0C165088736C1B821DAEF7415A7F8C.jpg" alt="img" style="zoom: 67%;">
+<center>2021/04/29摄于清华园</center>
+<img src="/2022/04/27/Cloud-in-BeiJing/945BCB97091E85A7D9699C9E960F6495.jpg" alt="img" style="zoom:15%;">
+<center>2021/07/03摄于颐和园</center>
+<img src="/2022/04/27/Cloud-in-BeiJing/798189F932F725071F4F6988D547C449.jpg" alt="img" style="zoom:25%;">
+<center>2020/10/13摄于紫荆公寓</center>
+<img src="/2022/04/27/Cloud-in-BeiJing/F3FC770AF1D7CF323E3E5D4DB4A80A5E.jpg" alt="img" style="zoom:20%;">
+<center>2020/09/07摄于紫荆公寓</center>
+<img src="/2022/04/27/Cloud-in-BeiJing/9C5088F4BD57A3B5DED11F61382AB07A.jpg" alt="img" style="zoom:25%;">
+<center>2020/09/03摄于紫荆公寓</center>
+<img src="/2022/04/27/Cloud-in-BeiJing/C36926923CFA9CC1C2C6A34982089789.jpg" alt="img" style="zoom:25%;">
+<center>2020/08/31摄于紫荆公寓</center>
+<hr>
+<center><b>To be continued</b></center>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+      
+            
+  
+  
+  <article itemscope="" itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://dongyanges.github.io/2022/05/04/%E6%AD%8C-%E8%AF%8D/">
+
+    <span hidden="" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="DongYang">
+      <meta itemprop="description" content="share something in life">
+    </span>
+
+    <span hidden="" itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="DongYang's Blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2022/05/04/%E6%AD%8C-%E8%AF%8D/" class="post-title-link" itemprop="url">歌&amp;词</a>
+        </h2>
+
+        <div class="post-meta">
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2022-05-04 01:17:31" itemprop="dateCreated datePublished" datetime="2022-05-04T01:17:31+08:00">2022-05-04</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2022-05-13 02:03:21" itemprop="dateModified" datetime="2022-05-13T02:03:21+08:00">2022-05-13</time>
+              </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/2022/05/04/%E6%AD%8C-%E8%AF%8D/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2022/05/04/%E6%AD%8C-%E8%AF%8D/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h4 id="2022-05-03——春风十里·鹿先森乐队"><a class="header-anchor" href="#2022-05-03——春风十里·鹿先森乐队">¶</a>2022/05/03——春风十里·鹿先森乐队</h4>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1/dist/APlayer.min.css"><script src="https://cdn.jsdelivr.net/npm/aplayer@1/dist/APlayer.min.js"></script><script src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js"></script><meting-js metin="meting" server="netease" type="song" id="38576323"></meting-js>
+<img src="/2022/05/04/%E6%AD%8C-%E8%AF%8D/chunfengshili.jpg" style="zoom: 33%;">
+<p>今天，我在五环路的里面，想着你；</p>
+<p>你在，昌平的校区，春风十里。</p>
+<p>今天，五道口的风很大，但是是同一片晚霞；</p>
+<p>我知道，所有的酒，都不如你。</p>
+<img src="/2022/05/04/%E6%AD%8C-%E8%AF%8D/chunfengshili2.jpg" style="zoom: 50%;">
+<p>本来，3月的风和4月的雨，整个春天都会揉进5月的某个下午；</p>
+<p>但所有的意外都是始料不及的。</p>
+<p>那些停不下的言语，相互倾诉；</p>
+<p>莫名的情愫，谁又真的带的走它呢？</p>
+<p>而于星空夜下，化成歌，先留在记忆里吧。</p>
+<br>
+<hr>
+<h4 id="2022-05-13——我的世界因你而改变·丢火车乐队"><a class="header-anchor" href="#2022-05-13——我的世界因你而改变·丢火车乐队">¶</a>2022/05/13——我的世界因你而改变·丢火车乐队</h4>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1/dist/APlayer.min.css"><script src="https://cdn.jsdelivr.net/npm/aplayer@1/dist/APlayer.min.js"></script><script src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js"></script><meting-js metin="meting" server="tencent" type="song" id="004fNIuq2vmZ4Y"></meting-js>
+<p><img src="/2022/05/04/%E6%AD%8C-%E8%AF%8D/wodeshijieyinniergaibian.jpg" alt="img"></p>
+<p>我的世界因你而改变</p>
+<p>深夜突然听到这首歌</p>
+<p>是啊，我 的世界确实改变了</p>
+<p>变得喜欢去发现自然的美，变得喜欢在户外，变得在压抑的时候去吐露心声，变得不再单调如一</p>
+<p>而是如彩虹般绚烂🌈</p>
+<hr>
+<center><b>To Be Continued</b></center>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+      
+            
   
   
   <article itemscope="" itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
@@ -303,8 +651,8 @@ setInterval("createtimeHeader()",250);
   
   
   
-
-          
+      
+            
   
   
   <article itemscope="" itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
@@ -384,9 +732,9 @@ setInterval("createtimeHeader()",250);
 <p><a target="_blank" rel="noopener" href="https://v.douyin.com/FMpkpT7/">紫禁城的雪</a></p>
 <img src="/2022/05/03/%E5%8C%97%E4%BA%AC%E8%B7%AF%E7%BA%BF/gugong.jpg" style="zoom:50%;">
 <h5 id="北京蓝港码头"><a class="header-anchor" href="#北京蓝港码头">¶</a>北京蓝港码头</h5>
-<!-- <style>.bbplayer{width: 100%; max-width: 1000px; margin: auto}</style><div class="bbplayer"><iframe class="bbplayer" id="mmedia-QQMCZnmaDJecDyZO" src="https://player.bilibili.com/player.html?bvid=BV1pZ4y1o7xr&page=1&high_quality=1&danmaku=true" allowfullscreen="allowfullscreen" scrolling="no" border="0" frameborder="0" framespacing="0" sandbox="allow-top-navigation allow-same-origin allow-forms allow-scripts allow-popups"></iframe></div><script> document.getElementById("mmedia-QQMCZnmaDJecDyZO").style.height=document.getElementById("mmedia-QQMCZnmaDJecDyZO").scrollWidth*0.76+"px";
+<!-- <style>.bbplayer{width: 100%; max-width: 1000px; margin: auto}</style><div class="bbplayer"><iframe class="bbplayer" id="mmedia-NsdOZBkVaiRkbgru" src="https://player.bilibili.com/player.html?bvid=BV1pZ4y1o7xr&page=1&high_quality=1&danmaku=true" allowfullscreen="allowfullscreen" scrolling="no" border="0" frameborder="0" framespacing="0" sandbox="allow-top-navigation allow-same-origin allow-forms allow-scripts allow-popups"></iframe></div><script> document.getElementById("mmedia-NsdOZBkVaiRkbgru").style.height=document.getElementById("mmedia-NsdOZBkVaiRkbgru").scrollWidth*0.76+"px";
     window.onresize = function(){
-      document.getElementById("mmedia-QQMCZnmaDJecDyZO").style.height=document.getElementById("mmedia-QQMCZnmaDJecDyZO").scrollWidth*0.76+"px";
+      document.getElementById("mmedia-NsdOZBkVaiRkbgru").style.height=document.getElementById("mmedia-NsdOZBkVaiRkbgru").scrollWidth*0.76+"px";
     }; </script> -->
 <p><a target="_blank" rel="noopener" href="https://v.douyin.com/FMgw29F/">北京蓝港码头</a><br>
 <img src="/2022/05/03/%E5%8C%97%E4%BA%AC%E8%B7%AF%E7%BA%BF/langangmatou0.png" style="zoom:50%;"></p>
@@ -400,88 +748,6 @@ setInterval("createtimeHeader()",250);
 <p><a target="_blank" rel="noopener" href="https://v.douyin.com/FMgv5NE/">#等疫情结束一定去北京这看看0</a></p>
 <hr>
 <center><b>To Be Continued</b></center>
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-          
-  
-  
-  <article itemscope="" itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://dongyanges.github.io/2022/04/29/Day/">
-
-    <span hidden="" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="DongYang">
-      <meta itemprop="description" content="share something in life">
-    </span>
-
-    <span hidden="" itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="DongYang's Blog">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2022/04/29/Day/" class="post-title-link" itemprop="url">Day</a>
-        </h2>
-
-        <div class="post-meta">
-          
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2022-04-29 22:48:53" itemprop="dateCreated datePublished" datetime="2022-04-29T22:48:53+08:00">2022-04-29</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2022-04-30 02:40:26" itemprop="dateModified" datetime="2022-04-30T02:40:26+08:00">2022-04-30</time>
-              </span>
-
-          
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Valine：</span>
-    
-    <a title="valine" href="/2022/04/29/Day/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/2022/04/29/Day/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>                        ❤️❤️❤️<strong>4.29</strong> ❤️❤️❤️</p>
-<!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1/dist/APlayer.min.css"><script src="https://cdn.jsdelivr.net/npm/aplayer@1/dist/APlayer.min.js"></script><script src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js"></script><meting-js metin="meting" server="netease" type="song" id=557584888 ></meting-js> -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1/dist/APlayer.min.css"><script src="https://cdn.jsdelivr.net/npm/aplayer@1/dist/APlayer.min.js"></script><div id="mmedia-DpNaqYyAVSsbYvYi"></div><script> var DpNaqYyAVSsbYvYi_options = JSON.parse('{\"audio\":[{\"name\":\"demo\",\"artist\":\"demo\",\"url\":\"当你老了demo.mp3\"}]}'); DpNaqYyAVSsbYvYi_options.container = document.getElementById("mmedia-DpNaqYyAVSsbYvYi"); const ap_DpNaqYyAVSsbYvYi = new APlayer(DpNaqYyAVSsbYvYi_options); </script>
-
       
     </div>
 
@@ -585,7 +851,7 @@ setInterval("createtimeBar()",250);
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">13</span>
+          <span class="site-state-item-count">14</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
