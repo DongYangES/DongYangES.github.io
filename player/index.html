@@ -82,10 +82,18 @@
     border-radius: 6px; font-size: 13px; transition: background 0.2s;
   }
   .songlist__item:hover { background: rgba(255, 255, 255, 0.06); }
+  .songlist__item { cursor: pointer; }
   .songlist__item.playing { background: rgba(49, 194, 124, 0.14); }
-  .songlist__number { width: 28px; color: var(--green); }
+  .songlist__number {
+    width: 28px; color: rgba(255, 255, 255, 0.5); position: relative;
+  }
+  .songlist__number .num { display: inline; }
+  .songlist__number .playing-bars { display: none; }
+  .songlist__item.playing .songlist__number .num { display: none; }
+  .songlist__item.playing .songlist__number .playing-bars { display: inline-flex; }
+  .songlist__item.playing .songlist__number { color: var(--green); }
   .playing-bars {
-    display: inline-flex; align-items: flex-end; gap: 2px; height: 12px;
+    align-items: flex-end; gap: 2px; height: 12px;
   }
   .playing-bars span {
     width: 2px; background: var(--green);
@@ -204,7 +212,9 @@
     font-size: 12px; color: rgba(255, 255, 255, 0.55);
     font-variant-numeric: tabular-nums; justify-self: end;
   }
-  .player_progress { grid-column: 1 / -1; margin-top: 6px; cursor: pointer; }
+  .player_progress {
+    grid-column: 1 / -1; margin-top: 0; padding: 8px 0; cursor: pointer;
+  }
   .player_progress__inner {
     position: relative; height: 4px;
     background: rgba(255, 255, 255, 0.2); border-radius: 3px;
@@ -265,7 +275,11 @@
   .btn_big_down:hover, .btn_big_voice:hover { color: var(--green); }
 
   .player_voice { display: flex; align-items: center; gap: 8px; width: 130px; }
-  .player_voice .player_progress__inner { flex: 1; }
+  .player_voice .player_progress__inner {
+    flex: 1; height: 20px; padding: 8px 0; background-clip: content-box; cursor: pointer;
+  }
+  .player_voice .player_progress__load,
+  .player_voice .player_progress__play { top: 8px; height: 4px; }
 
   @media (max-width: 900px) {
     .player__bd { flex-direction: column; align-items: center; }
@@ -283,33 +297,13 @@
   <div class="mod_player">
     <div class="player__bd">
       <div class="player_style_normal">
-        <div class="mod_songlist_toolbar">
-          <a class="mod_btn"><i class="ico"></i>收藏</a>
-          <a class="mod_btn"><i class="ico"></i>添加到</a>
-          <a class="mod_btn"><i class="ico"></i>下载</a>
-          <a class="mod_btn"><i class="ico"></i>清空列表</a>
-        </div>
         <div class="mod_songlist">
           <ul class="songlist__header">
             <li class="songlist__header_name">歌曲</li>
             <li class="songlist__header_author">歌手</li>
             <li class="songlist__header_time">时长</li>
           </ul>
-          <ul class="songlist__list">
-            <li>
-              <div class="songlist__item playing" id="songRow">
-                <div class="songlist__number">
-                  <i class="playing-bars"><span></span><span></span><span></span></i>
-                </div>
-                <div class="songlist__songname">
-                  <i class="tag-vip">VIP</i>
-                  <span class="songlist__songname_txt" id="rowTitle"></span>
-                </div>
-                <div class="songlist__artist" id="rowArtist"></div>
-                <div class="songlist__time" id="rowTime"></div>
-              </div>
-            </li>
-          </ul>
+          <ul class="songlist__list" id="songlist"></ul>
         </div>
       </div>
 
@@ -348,7 +342,7 @@
 
     <a class="btn_big btn_big_mode mode-repeat" id="modeBtn" title="单曲循环"></a>
     <a class="btn_big btn_big_like" title="喜欢"></a>
-    <a class="btn_big btn_big_down" title="下载"></a>
+    <a class="btn_big btn_big_down" id="downBtn" title="下载"></a>
 
     <div class="player_progress player_voice">
       <a class="btn_big btn_big_voice" id="voiceBtn" title="静音"></a>
@@ -358,14 +352,19 @@
     </div>
   </div>
 
-  <audio id="audio" src="song.mp3" preload="metadata"></audio>
+  <audio id="audio" preload="metadata"></audio>
 </div>
 
 <script>
 (function () {
-  var COVER_URL =
-    'https://y.qq.com/music/photo_new/T002R300x300M000003c616O2Zlswm.jpg?max_age=2592000';
-  var track = { title: '多远都要在一起', artist: 'G.E.M. 邓紫棋', album: '新的心跳', time: '03:37' };
+  var COVER_URL = 'cover.png';
+  var ARTIST = '王兑兑&李东东';
+  var ALBUM = '新的旅程';
+  var playlist = [
+    { title: '多远都要在一起（一）', artist: ARTIST, album: ALBUM, src: 'song1.mp3', lrc: 'song.lrc' },
+    { title: '多远都要在一起（二）', artist: ARTIST, album: ALBUM, src: 'song2.mp3', lrc: 'song.lrc' }
+  ];
+  var current = 0;
   var LINE_H = 36;
   var modes = [
     { key: 'order', label: '顺序播放', cls: 'mode-order' },
@@ -384,17 +383,76 @@
   // 填充静态信息
   $('bgPlayer').style.backgroundImage = 'url(' + COVER_URL + ')';
   $('cover').src = COVER_URL;
-  $('rowTitle').textContent = track.title;
-  $('rowArtist').textContent = track.artist;
-  $('rowTime').textContent = track.time;
-  $('infoTitle').textContent = track.title;
-  $('infoArtist').textContent = track.artist;
-  $('infoAlbum').textContent = track.album;
-  $('ftTitle').textContent = track.title;
-  $('ftArtist').textContent = track.artist;
-  document.title = track.title + ' - ' + track.artist;
   audio.volume = volume;
   $('volFill').style.width = (volume * 100) + '%';
+
+  function renderSonglist() {
+    var ul = $('songlist');
+    ul.innerHTML = '';
+    for (var i = 0; i < playlist.length; i++) {
+      var s = playlist[i];
+      var li = document.createElement('li');
+      li.innerHTML =
+        '<div class="songlist__item" data-idx="' + i + '">' +
+          '<div class="songlist__number">' +
+            '<span class="num">' + (i + 1) + '</span>' +
+            '<i class="playing-bars"><span></span><span></span><span></span></i>' +
+          '</div>' +
+          '<div class="songlist__songname">' +
+            '<i class="tag-vip">VIP</i>' +
+            '<span class="songlist__songname_txt">' + s.title + '</span>' +
+          '</div>' +
+          '<div class="songlist__artist">' + s.artist + '</div>' +
+          '<div class="songlist__time">--:--</div>' +
+        '</div>';
+      ul.appendChild(li);
+    }
+    ul.addEventListener('click', function (e) {
+      var item = e.target.closest ? e.target.closest('.songlist__item') : null;
+      if (!item) return;
+      var idx = +item.getAttribute('data-idx');
+      if (idx === current) {
+        if (audio.paused) audio.play(); else audio.pause();
+      } else {
+        loadTrack(idx, true);
+      }
+    });
+  }
+
+  function highlightRow() {
+    var items = $('songlist').querySelectorAll('.songlist__item');
+    for (var i = 0; i < items.length; i++) {
+      items[i].classList.toggle('playing', i === current);
+      items[i].classList.toggle('paused', i === current && audio.paused);
+    }
+  }
+
+  function loadTrack(idx, autoplay) {
+    current = idx;
+    var t = playlist[idx];
+    audio.src = t.src;
+    $('infoTitle').textContent = t.title;
+    $('infoArtist').textContent = t.artist;
+    $('infoAlbum').textContent = t.album;
+    $('ftTitle').textContent = t.title;
+    $('ftArtist').textContent = t.artist;
+    document.title = t.title + ' - ' + t.artist;
+    activeIdx = -1;
+    loadLyrics(t.lrc);
+    highlightRow();
+    if (autoplay) audio.play();
+  }
+
+  function loadLyrics(url) {
+    lyrics = [];
+    fetch(url).then(function (r) {
+      return r.ok ? r.text() : '';
+    }).then(function (t) {
+      lyrics = parseLrc(t);
+      renderLyrics();
+      updateLyricScroll();
+    }).catch(function () { renderLyrics(); });
+  }
 
   function fmt(sec) {
     if (!sec || isNaN(sec)) return '00:00';
@@ -455,13 +513,8 @@
     }
   }
 
-  fetch('song.lrc').then(function (r) {
-    return r.ok ? r.text() : '';
-  }).then(function (t) {
-    lyrics = parseLrc(t);
-    renderLyrics();
-    updateLyricScroll();
-  }).catch(function () { renderLyrics(); });
+  renderSonglist();
+  loadTrack(0, false);
 
   // 播放控制
   $('playBtn').addEventListener('click', function () {
@@ -469,14 +522,18 @@
   });
   audio.addEventListener('play', function () {
     $('playBtn').classList.remove('paused');
-    $('songRow').classList.remove('paused');
+    highlightRow();
   });
   audio.addEventListener('pause', function () {
     $('playBtn').classList.add('paused');
-    $('songRow').classList.add('paused');
+    highlightRow();
   });
   audio.addEventListener('loadedmetadata', function () {
     $('durTime').textContent = fmt(audio.duration);
+    var items = $('songlist').querySelectorAll('.songlist__item');
+    if (items[current]) {
+      items[current].querySelector('.songlist__time').textContent = fmt(audio.duration);
+    }
   });
   audio.addEventListener('timeupdate', function () {
     $('curTime').textContent = fmt(audio.currentTime);
@@ -491,18 +548,81 @@
       $('load').style.width = pct + '%';
     }
   });
-  audio.addEventListener('ended', function () {
+  function nextIndex() {
     var mode = modes[modeIdx].key;
-    if (mode === 'repeat' || mode === 'order') {
+    if (mode === 'shuffle' && playlist.length > 1) {
+      var r = current;
+      while (r === current) r = Math.floor(Math.random() * playlist.length);
+      return r;
+    }
+    return (current + 1) % playlist.length;
+  }
+  function prevIndex() {
+    return (current - 1 + playlist.length) % playlist.length;
+  }
+
+  audio.addEventListener('ended', function () {
+    if (modes[modeIdx].key === 'repeat') {
       audio.currentTime = 0; audio.play();
+    } else {
+      loadTrack(nextIndex(), true);
     }
   });
 
-  $('progress').addEventListener('click', function (e) {
+  document.querySelector('.btn_big_next').addEventListener('click', function () {
+    loadTrack(nextIndex(), true);
+  });
+  document.querySelector('.btn_big_prev').addEventListener('click', function () {
+    loadTrack(prevIndex(), true);
+  });
+
+  $('downBtn').addEventListener('click', function () {
+    var t = playlist[current];
+    var a = document.createElement('a');
+    a.href = t.src;
+    a.download = t.title + '.mp3';
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+  });
+
+  // 通用：为进度条绑定 点击 + 拖动
+  function bindSeekBar(el, onSeek) {
+    var track = el.querySelector('.player_progress__inner') || el;
+    var dragging = false;
+
+    function ratioFromEvent(e) {
+      var rect = track.getBoundingClientRect();
+      var x = (e.touches ? e.touches[0].clientX : e.clientX);
+      return Math.min(Math.max((x - rect.left) / rect.width, 0), 1);
+    }
+    function start(e) {
+      dragging = true;
+      onSeek(ratioFromEvent(e), false);
+      e.preventDefault();
+    }
+    function move(e) {
+      if (!dragging) return;
+      onSeek(ratioFromEvent(e), true);
+    }
+    function end(e) {
+      if (!dragging) return;
+      dragging = false;
+      onSeek(ratioFromEvent(e), false);
+    }
+
+    el.addEventListener('mousedown', start);
+    document.addEventListener('mousemove', move);
+    document.addEventListener('mouseup', end);
+    el.addEventListener('touchstart', start, { passive: false });
+    document.addEventListener('touchmove', move, { passive: false });
+    document.addEventListener('touchend', end);
+  }
+
+  bindSeekBar($('progress'), function (ratio) {
     if (!audio.duration) return;
-    var rect = this.getBoundingClientRect();
-    var ratio = Math.min(Math.max((e.clientX - rect.left) / rect.width, 0), 1);
     audio.currentTime = ratio * audio.duration;
+    $('played').style.width = (ratio * 100) + '%';
   });
 
   $('modeBtn').addEventListener('click', function () {
@@ -519,9 +639,7 @@
   $('voiceBtn').addEventListener('click', function () {
     muted = !muted; audio.muted = muted; applyVolumeUI();
   });
-  $('volBar').addEventListener('click', function (e) {
-    var rect = this.getBoundingClientRect();
-    var ratio = Math.min(Math.max((e.clientX - rect.left) / rect.width, 0), 1);
+  bindSeekBar($('volBar'), function (ratio) {
     volume = ratio; muted = false; audio.muted = false; audio.volume = volume;
     applyVolumeUI();
   });
